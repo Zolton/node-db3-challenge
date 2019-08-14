@@ -30,7 +30,7 @@ SELECT orders.orderid, Shippers.ShipperName, orders.orderdate FROM [Orders] inne
 
 - Display all ProductNames and Quantities placed on order 10251. Sort by ProductName. Shows 3 records.
 
-SELECT orderdetails.orderID, products.productName FROM OrderDetails inner JOIN Products ON orderdetails.productID = products.productid where orderdetails.orderID = 10251 
+SELECT orderdetails.orderID, products.productName FROM OrderDetails inner JOIN Products ON orderdetails.productID = products.productid where orderdetails.orderID = 10251
 
 - Display the OrderID, CustomerName and the employee's LastName for every order. All columns should be labeled clearly. Displays 196 records.
 
@@ -40,26 +40,26 @@ SELECT orders.orderid, customers.customername, employees.lastname FROM orders le
 
 Write helpers methods in `./schemes/scheme-model.js` that match the following specifications:
 
-- `find()`:
-  - Calling find returns a promise that resolves to an array of all schemes in the database.
-  - No steps are included.
-- `findById(id)`:
-  - Expects a scheme `id` as its only parameter.
-  - Resolve to a single scheme object.
-  - On an invalid `id`, resolves to `null`.
-- `findSteps(id)`:
-  - Expects a scheme `id`.
-  - Resolves to an array of all correctly ordered step for the given scheme: `[ { id: 17, scheme_name: 'Find the Holy Grail', step_number: 1, instructions: 'quest'}, { id: 18, scheme_name: 'Find the Holy Grail', step_number: 2, instructions: '...and quest'}, etc. ]`.
-  - This array should include the `scheme_name` _not_ the `scheme_id`.
-- `add(scheme)`:
+X `find()`:
+  X Calling find returns a promise that resolves to an array of all schemes in the database.
+  X No steps are included.
+X `findById(id)`:
+  X Expects a scheme `id` as its only parameter.
+  X Resolve to a single scheme object.
+  X On an invalid `id`, resolves to `null`.
+X `findSteps(id)`:
+  X Expects a scheme `id`.
+  X Resolves to an array of all correctly ordered step for the given scheme: `[ { id: 17, scheme_name: 'Find the Holy Grail', step_number: 1, instructions: 'quest'}, { id: 18, scheme_name: 'Find the Holy Grail', step_number: 2, instructions: '...and quest'}, etc. ]`.
+  X This array should include the `scheme_name` _not_ the `scheme_id`.
+X `add(scheme)`:
   - Expects a scheme object.
   - Inserts scheme into the database.
   - Resolves to the newly inserted scheme, including `id`.
-- `update(changes, id)`:
+X `update(changes, id)`:
   - Expects a changes object and an `id`.
   - Updates the scheme with the given id.
   - Resolves to the newly updated scheme object.
-- `remove(id)`:
+X `remove(id)`:
   - Removes the scheme object with the provided id.
   - Resolves to the removed scheme
   - Resolves to `null` on an invalid id.
